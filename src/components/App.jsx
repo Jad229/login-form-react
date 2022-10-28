@@ -3,20 +3,14 @@ import Login from "./Login";
 
 var isLoggedIn = false;
 
-function isRendered() {
-  if(isLoggedIn){
-    return <h1>Hello</h1>
-  } else {
-    return (
-      <Login />
-    );
-  }
-}
+const currentTime = new Date().getHours();
+
+console.log(currentTime);
 
 function App() {
   return (
     <div className="container">
-      {isRendered()}
+       {isLoggedIn ? <h1>Hello</h1> : <Login />}
     </div>
   );
 }
